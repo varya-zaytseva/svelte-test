@@ -7,12 +7,7 @@
 {/each}
 
       </div>
-    </div>
-    {
-        "title": "temp",
-        "href": "/temp"
-      }
-      
+    </div>  
   </nav>
   
   <div class="container">
@@ -36,7 +31,11 @@
     {
       title: 'Контакты',
       href: '/contact'
-    }
+    },
+    {
+        "title": "temp",
+        "href": "/temp"
+      }
   ]
 </script>
 
