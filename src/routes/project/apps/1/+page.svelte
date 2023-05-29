@@ -24,12 +24,14 @@
   }
 </script>
 
-<h1>My to-do list</h1>
+
 <main>
+<h1>My to-do list</h1>
   <form on:submit|preventDefault={add}>
     <input bind:value={newItem} placeholder="Enter to-do" />
     <button class="add-todo" on:click={add}><span>+</span></button>
   </form>
+  
   <div class="todos">
     {#each todoList as item, index}
       <div class="todo" class:completed={item.completed}>
@@ -98,7 +100,7 @@
     max-width: 500px;
   }
 
-  .todo\_\_buttons {
+  .todo__buttons {
     display: flex;
     align-items: center;
     margin-left: 1rem;
