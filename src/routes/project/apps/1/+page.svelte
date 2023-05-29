@@ -8,7 +8,15 @@
       <div class="todos">
         {#each todoList as item, index}
             <span class="todo__text">{item.task}</span>
-            <div class="todo__buttons"></div>
+            <div class="todo__buttons">
+              <button class="complete" on:click={() => complete(index)}>
+                <Icon name="check-mark" />
+              </button>
+              <button class="delete" on:click={() => remove(index)}>
+                <Icon name="delete" />
+              </button>
+            </div>
+      
         {/each}
     </div>             
 </main>
@@ -27,6 +35,16 @@ function add() {
     newItem = '';
   }
 }
+import Icon from '../../../../components/Icon.svelte';
+function remove(index) {
+  todoList.splice(index, 1);
+  todoList = todoList;
+}
+
+function complete(index) {
+  todoList[index].completed = !todoList[index].completed;
+}
+
 </script>
 <style>
     main {
