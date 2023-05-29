@@ -1,3 +1,16 @@
+<h1>My to-do list</h1>
+<main>
+    <form on:submit|preventDefault={add}>
+        <div class="todos">
+            {#each todoList as item, index}
+                <span class="todo__text">{item.task}</span>
+                <div class="todo__buttons"></div>
+            {/each}
+        </div>        
+        <input bind:value={newItem} placeholder="Enter to-do" />
+        <button class="add-todo" on:click={add}><span>+</span></button>
+      </form>      
+</main>
 <script>
     let newItem = '';
 let todoList = [];
@@ -14,19 +27,6 @@ function add() {
   }
 }
 </script>
-<h1>My to-do list</h1>
-<main>
-    <form on:submit|preventDefault={add}>
-        <div class="todos">
-            {#each todoList as item, index}
-                <span class="todo__text">{item.task}</span>
-                <div class="todo__buttons"></div>
-            {/each}
-        </div>        
-        <input bind:value={newItem} placeholder="Enter to-do" />
-        <button class="add-todo" on:click={add}><span>+</span></button>
-      </form>      
-</main>
 <style>
     main {
   display: flex;
